@@ -1,16 +1,16 @@
 import type { PathLayout, ZoneBandConfig } from '../types/game'
 
 export const ROUTE_LAYOUT: PathLayout = {
-  top: 84,
-  right: 96,
-  bottom: 120,
-  left: 96,
+  top: 52,
+  right: 72,
+  bottom: 56,
+  left: 72,
 }
 
 export const GAME_CONFIG = {
-  anchorCount: 9,
+  anchorCount: 13,
   prizeZoneCount: 4,
-  runnerSpeedPxPerSecond: 300,
+  runnerSpeedPxPerSecond: 165,
   pathStrokeWidth: 18,
   pathGlowWidth: 34,
   runnerRadius: 14,
@@ -18,12 +18,12 @@ export const GAME_CONFIG = {
 } as const
 
 export const ROUTE_CONFIG = {
-  startY: 0.04,
-  endY: 0.96,
-  minX: 0.2,
-  maxX: 0.8,
-  maxDeltaX: 0.18,
-  minSwing: 0.055,
+  startY: 0.02,
+  endY: 0.985,
+  minX: 0.14,
+  maxX: 0.86,
+  maxDeltaX: 0.22,
+  minSwing: 0.065,
   tension: 1,
 } as const
 
