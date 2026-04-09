@@ -179,7 +179,7 @@ export function GameScreen({ round, onComplete }: GameScreenProps) {
         <div className="game-board__meta">
           <span>4 зоны</span>
           <span>1 попытка</span>
-          <span>Маршрут уже задан</span>
+          <span>Тап по экрану = стоп</span>
         </div>
 
         <div className="route-canvas" ref={boardRef}>
@@ -193,17 +193,18 @@ export function GameScreen({ round, onComplete }: GameScreenProps) {
             runnerPosition={runnerPosition}
             zoneDecorations={zoneDecorations}
           />
+
+          <button
+            className="route-canvas__tap-target"
+            type="button"
+            disabled={pathLength <= 0}
+            aria-label="Остановить бегунок"
+            onClick={handleStop}
+          >
+            <span className="route-canvas__tap-hint">Тапни в любом месте</span>
+          </button>
         </div>
       </div>
-
-      <button
-        className="stop-button"
-        type="button"
-        disabled={pathLength <= 0}
-        onClick={handleStop}
-      >
-        Стоп
-      </button>
     </section>
   )
 }

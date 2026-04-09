@@ -194,7 +194,7 @@ h2 {
 }
 
 .primary-button,
-.stop-button {
+.route-canvas__tap-target {
   min-height: 64px;
   padding: 16px 24px;
   border-radius: 22px;
@@ -215,30 +215,14 @@ h2 {
   box-shadow: 0 14px 32px rgba(253, 160, 133, 0.35);
 }
 
-.stop-button {
-  width: 100%;
-  margin-top: auto;
-  color: #fff7ef;
-  font-weight: 800;
-  font-size: clamp(1.25rem, 2.6vw, 1.8rem);
-  letter-spacing: 0.02em;
-  background: linear-gradient(135deg, #ff7a59, #ff3d54);
-  box-shadow: 0 18px 40px rgba(255, 91, 102, 0.35);
-}
-
 .primary-button:hover,
-.stop-button:hover {
+.route-canvas__tap-target:hover {
   transform: translateY(-2px);
 }
 
 .primary-button:active,
-.stop-button:active {
+.route-canvas__tap-target:active {
   transform: translateY(0);
-}
-
-.stop-button:disabled {
-  opacity: 0.65;
-  cursor: progress;
 }
 
 .game-board {
@@ -270,6 +254,41 @@ h2 {
       transparent 1px,
       transparent 36px
     );
+}
+
+.route-canvas__tap-target {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 28px;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.route-canvas__tap-target:disabled {
+  opacity: 1;
+  cursor: progress;
+}
+
+.route-canvas__tap-target:disabled .route-canvas__tap-hint {
+  opacity: 0.65;
+}
+
+.route-canvas__tap-hint {
+  padding: 14px 20px;
+  border-radius: 999px;
+  color: #fff7ef;
+  font-weight: 800;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, rgba(255, 122, 89, 0.94), rgba(255, 61, 84, 0.94));
+  box-shadow: 0 18px 40px rgba(255, 91, 102, 0.35);
+  pointer-events: none;
 }
 
 .route-canvas__placeholder {
